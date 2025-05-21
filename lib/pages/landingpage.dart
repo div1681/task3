@@ -32,7 +32,7 @@ class Landingpage extends StatelessWidget {
             ),
             mybutton(
                 onTap: () {
-                  Navigator.pushNamed(context, 'explorer');
+                  Navigator.pushNamed(context, 'navigator');
                 },
                 child: Icon(Icons.arrow_forward))
           ],

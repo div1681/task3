@@ -1,16 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:task3/pages/searchpage.dart';
-import 'package:task3/utilities/my_botnavbar.dart';
 import 'package:task3/utilities/my_drawer.dart';
 
-class Explorerpage extends StatefulWidget {
-  const Explorerpage({super.key});
+class Searchpage extends StatefulWidget {
+  const Searchpage({super.key});
 
   @override
-  State<Explorerpage> createState() => _ExplorerpageState();
+  State<Searchpage> createState() => _SearchpageState();
 }
 
-class _ExplorerpageState extends State<Explorerpage> {
+class _SearchpageState extends State<Searchpage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,7 +16,7 @@ class _ExplorerpageState extends State<Explorerpage> {
       appBar: AppBar(
         centerTitle: true,
         title: Text(
-          "E X P L O R E ",
+          "S E A R C H  ",
           style: TextStyle(),
         ),
       ),
