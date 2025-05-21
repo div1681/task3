@@ -27,10 +27,11 @@ class mydrawer extends StatelessWidget {
                     text: "EXLPORE",
                     onTap: () {
                       Navigator.pop(context);
+                      Navigator.pushNamed(context, 'navigator');
                     }),
                 MyDrawerTile(
                     icon: Icons.save_alt_rounded,
-                    text: "SAVED",
+                    text: "WATCHLIST",
                     onTap: () {
                       Navigator.pushNamed(context, 'saved');
                     }),

@@ -4,9 +4,14 @@ import 'package:task3/pages/landingpage.dart';
 import 'package:task3/pages/navbarpage.dart';
 import 'package:task3/pages/savedpage.dart';
 import 'package:task3/themes/light_mode.dart';
+import 'package:provider/provider.dart';
+import 'package:task3/utilities/movie_modal.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(ChangeNotifierProvider(
+    create: (context) => EXPLORE(),
+    child: const MyApp(),
+  ));
 }
 
 class MyApp extends StatelessWidget {
@@ -22,7 +27,7 @@ class MyApp extends StatelessWidget {
         'landing': (context) => Landingpage(),
         'explorer': (context) => Explorerpage(),
         'saved': (context) => Savedpage(),
-        'navigator': (context) => botnavpage()
+        'navigator': (context) => botnavpage(),
       },
     );
   }
