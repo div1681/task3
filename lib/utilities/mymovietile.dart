@@ -139,7 +139,7 @@ class Mymovietile extends StatelessWidget {
                     child: IconButton(
                         padding: EdgeInsets.zero,
                         constraints: BoxConstraints(),
-                        icon: Icon(Icons.add),
+                        icon: Icon(Icons.bookmark_outline_sharp),
                         onPressed: () => addtoSaved(context))),
               ))
         ]),

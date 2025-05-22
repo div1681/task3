@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:marquee/marquee.dart';
 import 'package:task3/utilities/detailtile.dart';
 import 'package:task3/utilities/fetch_movies.dart';
 
@@ -28,7 +29,7 @@ Widget _infoText(String label, String value,
           TextSpan(
             text: value,
             style: valueStyle ??
-                TextStyle(fontSize: 16, color: Colors.grey.shade800),
+                TextStyle(fontSize: 16, color: Colors.grey.shade900),
           ),
         ],
       ),
@@ -78,13 +79,37 @@ class _DetailpageState extends State<Detailpage> {
                         ),
                         Expanded(
                           child: Center(
-                            child: Text(
-                              movie.Title,
-                              style: const TextStyle(
-                                fontSize: 28,
-                              ),
-                              textAlign: TextAlign.center,
-                            ),
+                            child: SizedBox(
+                                height: 40,
+                                width: 320,
+                                child: movie.Title.length > 15
+                                    ? Marquee(
+                                        text: movie.Title,
+                                        style: const TextStyle(
+                                          fontSize: 28,
+                                        ),
+                                        scrollAxis: Axis.horizontal,
+                                        blankSpace: 100,
+                                        velocity: 30.0,
+                                        pauseAfterRound: Duration(seconds: 1),
+                                        startPadding: 10,
+                                        accelerationDuration:
+                                            Duration(seconds: 1),
+                                        accelerationCurve: Curves.linear,
+                                        decelerationDuration:
+                                            Duration(milliseconds: 500),
+                                        decelerationCurve: Curves.easeOut,
+                                        //textAlign: TextAlign.center,
+                                      )
+                                    : Align(
+                                        alignment: Alignment.center,
+                                        child: Text(
+                                          movie.Title,
+                                          style: const TextStyle(
+                                            fontSize: 28,
+                                          ),
+                                        ),
+                                      )),
                           ),
                         ),
                         const SizedBox(width: 50),
@@ -108,7 +133,10 @@ class _DetailpageState extends State<Detailpage> {
                         Expanded(
                           child: Text(
                             movie.Plot,
-                            style: const TextStyle(fontSize: 14, height: 1.4),
+                            style: TextStyle(
+                                fontSize: 16,
+                                height: 1.3,
+                                color: Colors.grey.shade700),
                           ),
                         ),
                       ],

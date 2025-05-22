@@ -23,8 +23,8 @@ class Landingpage extends StatelessWidget {
             Text(
               "M O V I E   Z O N E",
               style: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 24,
+                fontSize: 48,
+                fontFamily: 'BebasNeue',
               ),
             ),
             SizedBox(

@@ -23,7 +23,7 @@ class _SavedpageState extends State<Savedpage> {
         centerTitle: true,
         title: Text(
           "W A T C H L I S T",
-          style: TextStyle(),
+          style: TextStyle(fontFamily: 'BebasNeue', fontSize: 32),
         ),
       ),
       drawer: mydrawer(),

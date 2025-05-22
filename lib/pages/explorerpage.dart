@@ -25,7 +25,7 @@ class _ExplorerpageState extends State<Explorerpage> {
         centerTitle: true,
         title: Text(
           "E X P L O R E ",
-          style: TextStyle(),
+          style: TextStyle(fontFamily: 'BebasNeue', fontSize: 32),
         ),
       ),
       drawer: mydrawer(),

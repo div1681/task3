@@ -6,6 +6,12 @@ import 'bigtile.dart';
 class EXPLORE extends ChangeNotifier {
   final List<postertile> recom_movies = [
     postertile(
+        title: "How to Train Your Dragon 2",
+        year: "2014",
+        imdb: "tt1646971",
+        imageurl:
+            "https://m.media-amazon.com/images/M/MV5BMzMwMTAwODczN15BMl5BanBnXkFtZTgwMDk2NDA4MTE@._V1_SX300.jpg"),
+    postertile(
         title: "Chernobyl",
         imageurl:
             "https://m.media-amazon.com/images/M/MV5BNzU0OTI4YTQtNGQ1ZS00ZjA4LTg3MTMtZjkyZWNjN2RiZDJmXkEyXkFqcGc@._V1_SX300.jpg",
@@ -29,12 +35,6 @@ class EXPLORE extends ChangeNotifier {
         imdb: "tt0482571",
         imageurl:
             "https://m.media-amazon.com/images/M/MV5BMjA4NDI0MTIxNF5BMl5BanBnXkFtZTYwNTM0MzY2._V1_SX300.jpg"),
-    postertile(
-        title: "How to Train Your Dragon 2",
-        year: "2014",
-        imdb: "tt1646971",
-        imageurl:
-            "https://m.media-amazon.com/images/M/MV5BMzMwMTAwODczN15BMl5BanBnXkFtZTgwMDk2NDA4MTE@._V1_SX300.jpg"),
     postertile(
         title: "Inside Out 2",
         year: "2024",
@@ -72,6 +72,8 @@ class EXPLORE extends ChangeNotifier {
   List<postertile> get searched => _searched;
 
   Future<void> searchmovie(String query) async {
+    isLoading = true;
+    notifyListeners();
     try {
       final data = await Fetch_Movie.fetch("s", query);
       _searched = data
@@ -86,6 +88,7 @@ class EXPLORE extends ChangeNotifier {
               imdb: e["imdbID"],
               year: e["Year"]))
           .toList();
+      isLoading = false;
       notifyListeners();
     } catch (e) {
       print("Search error: $e");
