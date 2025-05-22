@@ -47,7 +47,7 @@ class _DetailpageState extends State<Detailpage> {
   }
 
   Future<Detailtile> getdetail() async {
-    final result = await Fetch_Movie.fetch('i', widget.imdb);
+    final result = await Fetch_Movie.fetchMovieDetail(widget.imdb);
     return result as Detailtile;
   }
 
