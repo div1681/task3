@@ -1,16 +1,20 @@
-# task3
+# Movie Explorer
 
-A new Flutter project.
+Movie Explorer is a Flutter app that lets you search, explore, and save your favorite movies. With a clean UI and real-time movie search, it’s the perfect app for movie lovers.
 
-## Getting Started
+---
 
-This project is a starting point for a Flutter application.
+## Features
 
-A few resources to get you started if this is your first Flutter project:
+- Search movies by title using a responsive search bar  
+- Explore details like title, poster, release date, rating, and overview  
+- Add movies to a personalized watchlist  
+- Dedicated watchlist page to view saved movies  
+- Smooth horizontal scrolling and elegant UI
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+---
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## UI Preview
+
+Watch the app UI here:  
+[Google Drive Video Link](https://drive.google.com/file/d/1frkQNcbKPuAQH262h0ekvs-s9B2-TQGU/view?usp=sharing)
