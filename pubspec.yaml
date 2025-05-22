@@ -38,6 +38,7 @@ dependencies:
   http: ^1.4.0
   provider: ^6.1.5
   animated_search: ^0.0.5
+  marquee: ^2.3.0
 
 dev_dependencies:
   flutter_test:

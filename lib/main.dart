@@ -6,10 +6,16 @@ import 'package:task3/pages/savedpage.dart';
 import 'package:task3/themes/light_mode.dart';
 import 'package:provider/provider.dart';
 import 'package:task3/utilities/movie_modal.dart';
+import 'package:task3/utilities/movie_modal_search.dart';
 
 void main() {
-  runApp(ChangeNotifierProvider(
-    create: (context) => EXPLORE(),
+  runApp(MultiProvider(
+    providers: [
+      ChangeNotifierProvider(
+        create: (context) => EXPLORE(),
+      ),
+      ChangeNotifierProvider(create: (context) => SEARCH()),
+    ],
     child: const MyApp(),
   ));
 }

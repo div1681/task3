@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:task3/utilities/fetch_movies.dart';
 
 import 'bigtile.dart';
 
@@ -65,6 +66,33 @@ class EXPLORE extends ChangeNotifier {
         imageurl:
             "https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_SX300.jpg"),
   ];
+
+  List<postertile> _searched = [];
+  bool isLoading = false;
+  List<postertile> get searched => _searched;
+
+  Future<void> searchmovie(String query) async {
+    try {
+      final data = await Fetch_Movie.fetch("s", query);
+      _searched = data
+          .where((e) =>
+              e["Poster"] != null &&
+              e["Title"] != null &&
+              e["imdbID"] != null &&
+              e["Year"] != null)
+          .map((e) => postertile(
+              title: e["Title"],
+              imageurl: e["Poster"],
+              imdb: e["imdbID"],
+              year: e["Year"]))
+          .toList();
+      notifyListeners();
+    } catch (e) {
+      print("Search error: $e");
+      _searched = [];
+      notifyListeners();
+    }
+  }
 
   List<postertile> _saved = [];
 
